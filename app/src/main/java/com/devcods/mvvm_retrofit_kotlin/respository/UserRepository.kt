@@ -34,7 +34,7 @@ object UserRepository {
                 super.onActive()
                 job?.let { job1 ->
                     CoroutineScope(Dispatchers.IO + job1).launch {
-                     val users = ApiBuilder.apiService.getUsers()
+                        val users = ApiBuilder.apiService.getUsers()
                         withContext(Dispatchers.Main){
                             value = users
                             job1.complete()
